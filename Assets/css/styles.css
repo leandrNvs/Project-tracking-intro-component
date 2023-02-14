@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --Red: hsl(0, 100%, 68%);
+  --Very-Dark-Blue: hsl(230, 29%, 20%);
+  --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+  --Grayish-Blue: hsl(231, 7%, 65%);
+  --Light-Grayish-Blue: hsl(207, 33%, 95%);
+
+  --ff-barlow: "Barlow", sans-serif;
+  --ff-barlow-condensed: "Barlow Condensed", sans-serif;
+
+  --spacing: 2rem;
+}
+
+h1,
+h2,
+a,
+span.badge {
+  font-family: var(--ff-barlow-condensed);
+  text-transform: uppercase;
+}
+
+p {
+  font-family: var(--ff-barlow);
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+}
+
+main {
+  padding-left: var(--spacing);
+  position: relative;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: absolute;
+  top: 0;
+  width: calc(100% - var(--spacing) * 2);
+  z-index: 1;
+}
+
+.decoration {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.decoration div {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  background-color: var(--Light-Grayish-Blue);
+  right: -30%;
+  border-bottom-left-radius: 5rem;
+}
+
+.decoration img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -4rem;
+  width: 100%;
+  min-width: 400px;
+  max-width: 500px;
+}
+
+section > div:last-child {
+  padding-right: var(--spacing);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-size: 0.925rem;
+  gap: 0.8rem;
+  color: var(--Grayish-Blue);
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+span.badge {
+  background-color: var(--Very-Dark-Blue);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  letter-spacing: unset;
+  font-size: 0.825rem;
+}
+
+h1 {
+  color: var(--Very-Dark-Blue);
+  font-size: 2rem;
+}
+
+p {
+  color: var(--Very-Dark-Blue);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+a.primary {
+  background-color: var(--Red);
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+a.primary:hover {
+  opacity: 0.8;
+}
+
+a.secondary {
+  color: var(--Grayish-Blue);
+  letter-spacing: 3px;
+  font-size: 0.825rem;
+}
+
+@media (max-width: 1100px) {
+  nav {
+    position: absolute;
+    top: -400%;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    transition: top 0.5s ease;
+  }
+
+  nav.active {
+    top: 120%;
+  }
+
+  nav a {
+    font-weight: bold;
+    color: var(--Very-Dark-Blue);
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  nav a:last-child {
+    border-top: 1px solid #c7c7c7;
+    color: var(--Grayish-Blue);
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --spacing: 10rem;
+  }
+
+  header button {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-decoration {
+    background-color: var(--Grayish-Blue);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+  }
+
+  nav a {
+    font-weight: bold;
+    color: var(--Very-Dark-Blue);
+  }
+
+  nav a:last-child {
+    color: var(--Grayish-Blue);
+  }
+
+  section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 100vh;
+  }
+
+  section > div {
+    height: unset;
+  }
+
+  section > div:last-child {
+    width: 45%;
+    padding-right: 0;
+  }
+
+  section > div:first-child {
+    flex: 1;
+    align-self: flex-start;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .decoration {
+    height: 100%;
+  }
+
+  .decoration div {
+    right: unset;
+    width: 100%;
+    height: 50%;
+  }
+
+  .decoration img {
+    max-width: 900px;
+  }
+}
