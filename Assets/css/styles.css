@@ -17,7 +17,7 @@
   --ff-barlow: "Barlow", sans-serif;
   --ff-barlow-condensed: "Barlow Condensed", sans-serif;
 
-  --spacing: 2rem;
+  --spacing: 1rem;
 }
 
 h1,
@@ -40,7 +40,6 @@ button {
 }
 
 main {
-  padding-left: var(--spacing);
   position: relative;
 }
 
@@ -51,6 +50,8 @@ header {
   padding: 1rem 0;
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: calc(100% - var(--spacing) * 2);
   z-index: 1;
 }
@@ -81,7 +82,7 @@ header {
 }
 
 section > div:last-child {
-  padding-right: var(--spacing);
+  padding-left: var(--spacing);
   height: 50vh;
   display: flex;
   flex-direction: column;
